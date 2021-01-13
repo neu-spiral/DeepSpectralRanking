@@ -2,6 +2,11 @@
 The code in this repository implements the algorithms and experiments in the following paper:  
 > I. Yildiz, J. Dy, D. Erdogmus, S. Ostmo, J. P. Campbell, M. F. Chiang, S. Ioannidis, “Deep Spectral Ranking”, AISTATS, San Diego, 2021
 
+To begin with, install all the package dependencies via ''keras_gpu_env_3_6.yml''. The following command executes this in an Anaconda environment:
+'''
+conda env create -f keras_gpu_env_3_6.yml
+'''
+
 
 
 # Citing This Paper
