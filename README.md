@@ -16,6 +16,8 @@ We also implement the shallow counterparts of DSR-KL and DSR-l2 where scores are
 
 We evaluate these algorithms on real-life datasets, where preprocessing is handled in `preprocessing_image_datasets.py`. For datasets with a global total ranking rather than expert generated ranking labels (c.f. ICLR paper ratings, IMDB movie ratings, Movehub-Cost and Movehub-Quality city ratings), we generated all possible K-way rankings. Then, to simulate real-life labeling noise, we randomly select a fraction of the generated rankings and add noise by permuting each ranking. We perform 5-fold cross validation and partition each dataset into training, validation, and test sets in two ways. In rank partitioning, we partition the dataset w.r.t. ranking observations, using 80% of all observations for training, 10% for validation, and the remaining 10% for testing. In sample partitioning, we partition samples, using 80% of all samples for training, 10% for validation, and the remaining 10% for testing. In this setting, observations containing samples from both training and validation/test sets are discarded.
 
+We adapt the DNN architecture for deep ranking regression algorithms based on the dataset type: for datasets with numerical features, we use fully-connected architectures with number of layers tuned w.r.t. best validation performance. For datasets with images as samples, we use the GoogleNet architecture (Szegedy et al., 2015) initialized with pre-trained weights on the ImageNet dataset. For the ICLR dataset with paper abstracts as samples, we use the Bidirectional Encoder Representations from Transformers (BERT) architecture with pre-trained weights on the Wikipedia dataset.
+
 
 
 # Citing This Paper
