@@ -7,7 +7,8 @@ To begin with, install all package dependencies via `keras_gpu_env_3_6.yml`. The
 conda env create -f keras_gpu_env_3_6.yml
 ```
 
-
+We implement five ranking regression algorithms that regress Plackett-Luce scores from ranking observations via Maximum Likelihood Estimation. 
+- Deep Spectral Ranking (DSR)
 
 # Citing This Paper
 Please cite the following paper if you intend to use this code for your research.
